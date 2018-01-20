@@ -1,5 +1,13 @@
 
+# Welcome to ipyrf
+ipyrf is a Flask web app to control iperf from a web gui. 
+Uses:
+* [flask](http://flask.pocoo.org/)
+* [iperf3](https://iperf3-python.readthedocs.io)
+* [jQuery Knob](https://www.jqueryscript.net/demo/Nice-Touchable-jQuery-Dial-Plugin-Knob/)
+* [docker](https://www.docker.com/)
 
+# Build and run iperf (inside docker)
 ```
 docker build -t ipyrf .
 docker run -it --rm --net=host --name ipyrf-container ipyrf
@@ -13,6 +21,7 @@ python client.py
 
 # Python Iperf client
 
+```
 import iperf3
 
 client = iperf3.Client()
@@ -24,3 +33,4 @@ client.bandwidth = 23*1000*1000
 client.num_streams = 1
 
 client.run()
+``
